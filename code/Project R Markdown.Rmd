@@ -1,0 +1,68 @@
+---
+title: "Project R Markdown"
+author: "Cliff Wu"
+date: '2022-09-21'
+output: html_document
+---
+
+# Introduction
+
+Soccer as many people know is the most popular sports in the world. And the world cup coming up at the end of this year. So, for this final project, we want to explore the FIFA World Cup 2022 dataset which contains information on 23922 international games from the year 1993 to now. On top of that, the strength of each team is provided by incorporating actual FIFA rankings. I was planning to go through these data and extrapolate helpful information that can be used to predict the outcome of the upcoming 2022 FIFA world cup results. For example, I can subset the games that have been played by the 32 teams that qualify for the World Cup this year and look for some specific attributes that would reflect their performances. Such as goal for, goal against. Also, we could look at the teams by region, and figure out the top ranking team in each category. Along with that, maybe some visualization could be done to incorporate any potential visualizable findings.
+
+# Data Loading
+```{r, load_data}
+# Specify current working directory
+here::i_am("code/Project R Markdown.Rmd")
+```
+```{r load the output}
+table_one<- readRDS(
+  here::here("output/table_one.rds")
+)
+
+home_advantage_fig<- readRDS(
+  here::here("output/home_advantage_fig.rds")
+)
+
+frenchgames_fig<-readRDS(
+  here::here("output/frenchgames_fig.rds")
+)
+
+```
+# Home Team Advantage Analysis
+
+In team sports, the term home advantage describes the benefit that the home team is said to gain over the visiting team.It can be related to various of reasons,the psychological effects the supporting fans created on the opponents or sometime even influence the officiating. So, first let's explore this dataset to find whether or not the home teams have historically been performing better than the visiting teams.
+
+
+
+```{r, table_1}
+table_one
+```
+
+\
+
+
+First by taking a look of the total of goals scored and allowed by the home team to analyze their performances. As shown on the table above, among all six continents, home teams all tend to have more goals scored then allowed, which shows that the home teams have outperformed the visiting teams.
+
+
+```{r, warning=FALSE,message=FALSE}
+home_advantage_fig
+```
+
+Now let's tackle this question in a more direct way by access the game results of the home teams. Figure above shows that out of the total of 23921 games that have been recorded, the home teams have won 11761 which is 49% of the games, and only lost 6771 games. The result agree with the previous analysis that home teams do performance better than the visiting teams.
+
+
+# France's Performance Since 2016
+
+France is the defending World Cup Champion this year, ever since Euro 2016 France has shown its dominant performance on the international stage. This section is meant to explore the performance of the defending World Cup champion.
+
+
+
+```{r}
+frenchgames_fig
+```
+
+The above figure shows the game results of France National Soccer teams from 2016-1-1 to present. They have played total of 87 international matches and have record of 59 wins, 18 draws, and 10 loses. They have a 67.8% wining percentage.
+
+
+
+

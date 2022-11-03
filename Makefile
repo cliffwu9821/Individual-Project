@@ -1,4 +1,4 @@
-report.html: code/make_table.R code/make_figure.R data/international_matches.csv
+report.html: code/make_table.R code/make_figure.R data/international_matches.csv table fig
 	Rscript code/render_report.R
 
 table: data/international_matches.csv 
@@ -10,5 +10,5 @@ fig: data/international_matches.csv
 clean:
 	rm -f output/*.rds && rm -f report.html
 	
-intall:
+install:
 	Rscript -e "renv::restore(prompt = FALSE)"

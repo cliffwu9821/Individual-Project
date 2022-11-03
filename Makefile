@@ -10,3 +10,5 @@ fig: data/international_matches.csv
 clean:
 	rm -f output/*.rds && rm -f report.html
 	
+intall:
+	Rscript -e "renv::restore(prompt = FALSE)"

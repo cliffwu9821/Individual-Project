@@ -35,7 +35,9 @@ In team sports, the term home advantage describes the benefit that the home team
 
 
 ```{r, table_1}
-table_one
+library(kableExtra)
+knitr::kable(table_one, align="lccrr", caption = "Home Advantage Analysis (Table 1)", row.names = FALSE) %>%
+  kable_material(c("striped","hover"))
 ```
 
 

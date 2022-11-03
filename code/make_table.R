@@ -23,8 +23,7 @@ goal_for<-goal_for[order(goal_for$`Total Number of Goals Scored`,decreasing=TRUE
 goal_against<-goal_against[order(goal_against$`Total Number of Goals Allowed`,decreasing = TRUE),]
 
 # Use the kable package to generate tables for home advantage analysis
-table_one<-knitr::kable(list(goal_for,goal_against), align="lccrr", caption = "Home Advantage Analysis (Table 1)", row.names = FALSE) %>%
-  kable_material(c("striped","hover"))
+table_one<-list(goal_for,goal_against)
 
 saveRDS(
   table_one,

@@ -12,7 +12,7 @@ Soccer as many people know is the most popular sports in the world. And the worl
 # Data Loading
 ```{r, load_data}
 # Specify current working directory
-here::i_am("code/Project R Markdown.Rmd")
+here::i_am("code/Project_R_Markdown.Rmd")
 ```
 ```{r load the output}
 table_one<- readRDS(

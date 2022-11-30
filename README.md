@@ -21,4 +21,12 @@
 - Lockfile that contains all of the project related R packages' information(Version,Name,Sources,etc)
 
 `Makefile`
-- makes the detailed report
+# Making the report
+- makes the project related tables and figures as well as the detailed report
+# Building the image 
+- Runs make project_image to build the docker image that contains the complete report
+# Running the automated version of the image
+- Runs make report/report.html to run the docker container that would mount the local folder report/ to the appropriate folder in the container. And the generate the report.html and move it into the mounted folder /report
+
+# Dockerhub Link 
+https://hub.docker.com/repository/docker/cliff98/final_project
